@@ -43,7 +43,7 @@ function LoginForm() {
         </div>
         {!userIsValid && <p>Name can only contain letters</p>}
         <button onClick={submitHandler} type="button">
-          Login
+          Login 
         </button>
       </form>
     </section>
