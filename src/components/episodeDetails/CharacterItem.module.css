@@ -1,0 +1,28 @@
+.character {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #008080;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 12px;
+    text-align: center;
+    color: white;
+  }
+  
+  .character h2 {
+    font-size: 2rem;
+    color: white;
+  }
+  
+  .character h3 {
+    color: white;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .character img {
+    display: block  ;
+  }
+  .details {
+    text-align: left;
+    font-size: 18px;
+}
