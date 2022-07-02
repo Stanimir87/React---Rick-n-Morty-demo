@@ -25,6 +25,7 @@ const Search = () => {
       setInfo(data.info);
     } catch {
       setError(error.message);
+      setIsLoading(false);
     }
     setIsLoading(false);
   }
