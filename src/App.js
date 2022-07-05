@@ -27,7 +27,7 @@ function App() {
           <Route path="/episode/:id" exact>
             <EpisodeDetailsPage />
           </Route>
-          <Route path="/location/" >
+          <Route path="/location/" exact>
             <UnknownLocationPage />
           </Route>
           <Route path="/location/:id" >
