@@ -41,7 +41,7 @@ function LoginForm() {
           <label htmlFor="name">What's your name?</label>
           <input type="text" id="name" required ref={nameInputRef} />
         </div>
-        {!userIsValid && <p>Name can only contain letters</p>}
+        {!userIsValid && <p>Name can only contain English letters</p>}
         <button onClick={submitHandler} type="button">
           Login 
         </button>
