@@ -1,16 +1,16 @@
-import { Fragment, useCallback, useContext, useEffect, useState } from "react";
+import { Fragment, useCallback, useEffect, useState } from "react";
 import CharLocationList from "./CharLocationList";
-import LocationContext from "../../store/LocationContext";
+
 import classes from './LocationDetails.module.css'
 
 const LocationDetails = (props)=>{
     const [error, setError] = useState();
     const [location, setLocation] = useState();
-    const ctx = useContext(LocationContext);
+
 
     const getLocation = useCallback(async () => {
         try {
-          const response = await fetch(ctx.location)
+          const response = await fetch(`https://rickandmortyapi.com/api/location/${props.id}`);
           ;
           if (!response.ok) {
             throw new Error("Something went wrong");
@@ -28,6 +28,10 @@ const LocationDetails = (props)=>{
 
       if (!location) {
         return <p>Loading...</p>;
+      }
+
+      if(location.residents.length < 1){
+        return <p>No characters found!</p>
       }
 
       return (

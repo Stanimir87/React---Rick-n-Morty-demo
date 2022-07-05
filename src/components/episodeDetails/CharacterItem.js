@@ -6,6 +6,9 @@ import classes from "./CharacterItem.module.css";
 
 const CharacterItem = (props) => {
 
+  const loc = props.location.url.slice(41);
+  const org = props.origin.url.slice(41);
+
   return (
     <Fragment>
       <li className={classes.character}>
@@ -14,12 +17,12 @@ const CharacterItem = (props) => {
         <strong>Status:</strong> {props.status}
         <br />
         <strong>Species:</strong> {props.species}
-        <br />        
-        <strong>Origin:</strong><Link to={`/location/${props.origin.name}`}> {props.origin.name}</Link>
-        <br />
+        <br />    
         <strong>Gender: </strong>{props.gender}
+        <br />    
+        <strong>Origin:</strong><Link to={`/location/${org}`}> {props.origin.name}</Link>
         <br />
-        <strong>Location: </strong><Link to={`/location/${props.location.name}`}> {props.location.name}</Link>
+        <strong>Location: </strong><Link to={`/location/${loc}`}> {props.location.name}</Link>
         </p></div>
         <img src={props.img} alt='pic' />
       </li>

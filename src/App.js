@@ -8,11 +8,11 @@ import NameContextProvider from "./store/NameCtxProvider";
 import LocationDetailsPage from "./pages/LocationDetailsPage";
 import LocationContextProvider from "./store/LocationContextprovider";
 import SearchPage from "./pages/SearchPage";
+import UnknownLocationPage from "./pages/UknownLocationPage";
 
 function App() {
   return (
     <NameContextProvider>
-      <LocationContextProvider>
       <Layout>
         <Switch>
           <Route path="/" exact>
@@ -27,6 +27,9 @@ function App() {
           <Route path="/episode/:id" exact>
             <EpisodeDetailsPage />
           </Route>
+          <Route path="/location/" >
+            <UnknownLocationPage />
+          </Route>
           <Route path="/location/:id" >
             <LocationDetailsPage />
           </Route>
@@ -35,7 +38,6 @@ function App() {
           </Route>
         </Switch>
       </Layout>
-      </LocationContextProvider>Ф
     </NameContextProvider>
   );
 }
