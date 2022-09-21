@@ -34,10 +34,15 @@ const EpisodeDetails = (props) => {
 
   return (
     <Fragment>
-      <div className={classes.details}><p><strong>Name:</strong>{episode.name}</p>
+      <div className={classes.wrapper}>
+      <div className={classes.row}><div className={classes.details}>
+      <p><strong>Name:</strong>{episode.name}</p>
       <p><strong>Air Date:</strong>{episode.air_date}</p>
       <p><strong>Episode:</strong>{episode.episode}</p></div>
+      <div></div>
       <CharacterList characters={episode.characters} />
+      </div>
+      </div>
     </Fragment>
   );
 };

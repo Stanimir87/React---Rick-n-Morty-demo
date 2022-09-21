@@ -1,0 +1,17 @@
+.label{
+    display: block;
+    padding-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .btn {   
+    padding: 0.75rem 6rem;
+    margin: 0px;
+  }
+  
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

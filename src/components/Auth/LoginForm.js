@@ -1,6 +1,7 @@
 import { useRef, useContext, useEffect, useState } from "react";
 import NameContext from "../../store/NameCtx";
 import { Redirect } from "react-router-dom";
+import classes from "./LoginForm.module.css";
 
 function LoginForm() {
   const nameInputRef = useRef();
@@ -35,15 +36,15 @@ function LoginForm() {
 
   return (
     <section>
-      <h1>Login</h1>
+      <h1 className={classes.heading}>Login</h1>
       <form onSubmit={submitHandler}>
         <div>
           <label htmlFor="name">What's your name?</label>
           <input type="text" id="name" required ref={nameInputRef} />
         </div>
         {!userIsValid && <p>Name can only contain English letters</p>}
-        <button onClick={submitHandler} type="button">
-          Login 
+        <button className={classes.btn} onClick={submitHandler} type="button">
+          Login
         </button>
       </form>
     </section>

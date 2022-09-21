@@ -6,6 +6,8 @@ section {
     background-color: white;
     padding: 2rem;
     border-radius: 12px;
+    align-items: center;
+    max-width: 80%;
   }
   
   button {
@@ -16,6 +18,7 @@ section {
     color: white;
     padding: 0.75rem 2rem;
     border-radius: 20px;
+    margin: 10px;
   }
   
   button:focus {
@@ -27,4 +30,9 @@ section {
     background-color: #460897;
     border-color: #460897;
   }
-  
+  .pagination{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }

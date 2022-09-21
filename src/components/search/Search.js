@@ -1,5 +1,6 @@
 import { Fragment, useRef, useState } from "react";
 import SearchList from "./SearchList";
+import classes from './Search.module.css';
 
 const Search = () => {
   const nameInputRef = useRef();
@@ -72,7 +73,7 @@ const Search = () => {
     setIsLoading(false);
   }
 
-  let content = <p>Search for Characters!</p>;
+  let content = <p></p>;
 
   if (char) {
     content = <SearchList characters={char} />;
@@ -88,21 +89,22 @@ const Search = () => {
 
   return (
     <Fragment>
-      <p>Search Characters by Name</p>
+      
+      <div className={classes.row}>
       <form onSubmit={searchCharHandler}>
         <div>
-          <label htmlFor="name">name...</label>
+          <label className={classes.label} htmlFor="name">Search Characters by Name</label>
           <input type="text" id="name" required ref={nameInputRef}></input>
         </div>
-        <button onClick={searchCharHandler} type="button">
+        <button className={classes.btn} onClick={searchCharHandler} type="button">
           Search
         </button>
-      </form>
+      </form></div>
       <section>{content}</section>
       {info.prev !== null && info.prev !== undefined && (
         <button onClick={clickPrevHandler}>Previous</button>
       )}
-      {info.next && <button onClick={clickNextHandler}>Next</button>}
+      {info.next && <button onClick={clickNextHandler}>Next</button>}      
     </Fragment>
   );
 };

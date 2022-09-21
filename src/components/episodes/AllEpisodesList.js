@@ -1,6 +1,6 @@
 import { Fragment, useState, useEffect, useCallback } from "react";
 import EpisodesList from "./EpisodesList";
-import './AllEpisodesList.module.css';
+import classes from './AllEpisodesList.module.css';
 
 const AllEpisodesList = (props) => {
   const [episodes, setEpisodes] = useState([]);
@@ -93,8 +93,10 @@ const AllEpisodesList = (props) => {
     <Fragment>
 
       <section>{content}</section>
+      <div className={classes.pagination}>
       {info.prev!== null && info.prev !== undefined && <button onClick={clickPrevHandler} >Previous</button>}
-      {info.next && <button onClick={clickNextHandler} >Next</button>}
+      {info.next && <button  onClick={clickNextHandler} >Next</button>}
+      </div>
     </Fragment>
   );
 };
