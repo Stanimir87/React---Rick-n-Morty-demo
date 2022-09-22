@@ -5,9 +5,10 @@ import classes from './Search.module.css';
 const Search = () => {
   const nameInputRef = useRef();
   const [char, setChar] = useState();
-  const [error, setError] = useState();
+  const [err, setErr] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [info, setInfo] = useState({});
+
 
   async function searchCharHandler(event) {
     event.preventDefault();
@@ -15,6 +16,7 @@ const Search = () => {
     const enteredName = nameInputRef.current.value;
 
     try {
+      setErr(false);
       const response = await fetch(
         `https://rickandmortyapi.com/api/character/?name=${enteredName}`
       );
@@ -22,10 +24,11 @@ const Search = () => {
         throw new Error("Something went wrong");
       }
       const data = await response.json();
+
       setChar(data.results);
       setInfo(data.info);
     } catch {
-      setError(error.message);
+      setErr('No such character');
       setIsLoading(false);
     }
     setIsLoading(false);
@@ -33,7 +36,7 @@ const Search = () => {
 
   async function clickNextHandler() {
     setIsLoading(true);
-    setError(null);
+    setErr(null);
 
     try{
       const response = await fetch(info.next);
@@ -47,14 +50,14 @@ const Search = () => {
       setChar(data.results);
 
     }catch{
-      setError(error.message);
+      setErr(err.message);
     }
     setIsLoading(false);
   }
 
   async function clickPrevHandler() {
     setIsLoading(true);
-    setError(null);
+    setErr(null);
 
     try{
       const response = await fetch(info.prev);
@@ -68,7 +71,7 @@ const Search = () => {
       setChar(data.results);
 
     }catch{
-      setError(error.message);
+      setErr(err.message);
     }
     setIsLoading(false);
   }
@@ -79,8 +82,8 @@ const Search = () => {
     content = <SearchList characters={char} />;
   }
 
-  if (error) {
-    content = <p>{error}</p>;
+  if (err) {
+    content = <p>{err}</p>;
   }
 
   if (isLoading) {
