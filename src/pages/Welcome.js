@@ -19,6 +19,8 @@ const Welcome = () => {
       <div className={classes.wrapper}>
       <h1 className={classes.heading}>Welcome to the Rick and Morty DB</h1>
       {!ctx.name && <NavLink className={classes.btn} to="/login">Login</NavLink>}
+      {ctx.name && <NavLink className={classes.btn} to="/episodes">AllEpisodes</NavLink>}
+      {ctx.name && <NavLink className={classes.btn} to="/search">Search</NavLink>}
       </div>
     </Fragment>
   );

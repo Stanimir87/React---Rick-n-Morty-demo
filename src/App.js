@@ -6,7 +6,6 @@ import Login from "./pages/Login";
 import Welcome from "./pages/Welcome";
 import NameContextProvider from "./store/NameCtxProvider";
 import LocationDetailsPage from "./pages/LocationDetailsPage";
-import LocationContextProvider from "./store/LocationContextprovider";
 import SearchPage from "./pages/SearchPage";
 import UnknownLocationPage from "./pages/UknownLocationPage";
 

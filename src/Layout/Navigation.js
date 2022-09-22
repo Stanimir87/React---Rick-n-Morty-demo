@@ -13,7 +13,7 @@ function Navigation(){
 
     return (
         <header className={classes.header}>
-          <div className={classes.logo}>Rick and Morty DB</div>
+          <NavLink to="/" activeClassName={classes.logo}>Rick and Morty DB</NavLink>
           <nav className={classes.nav}>
             <ul>
               <li>

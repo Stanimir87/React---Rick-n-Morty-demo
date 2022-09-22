@@ -11,8 +11,9 @@
   .logo {
     font-size: 2rem;
     color: white;
+    text-decoration: none;
   }
-  
+
   .nav ul {
     list-style: none;
     display: flex;
