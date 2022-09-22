@@ -1,3 +1,10 @@
+.background{
+    background-image: url('../../../React---Rick-n-Morty-demo/public/cinema-film-projector-resized.jpg');
+    height: 1000px;
+    background-position-x: center;
+}
+
+
 .btn{
     font: inherit;
     cursor: pointer;
@@ -16,7 +23,7 @@
 .wrapper{
     display: block;
     text-align: center;
-    margin-top: 20%;
+    padding-top: 18%;
 }
 .heading{
     padding-bottom: 20px;

@@ -1,4 +1,5 @@
 import SearchItem from "./Searchitem";
+import classes from './SearchList.module.css';
 
 const SearchList = (props) => {
     return <ul>
