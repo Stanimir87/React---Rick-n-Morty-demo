@@ -1,5 +1,5 @@
 .background{
-    background-image: url('../../../React---Rick-n-Morty-demo/public/cinema-film-projector-resized.jpg');
+    background-image: url('../../public/cinema-film-projector-resized.jpg');
     height: 1000px;
     background-position-x: center;
 }
